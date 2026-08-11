@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+/* ── THEME TOKENS ── */
+:root,
+[data-theme="light"] {
+  --font-inter: 'Inter', sans-serif;
+  --color-bg: #F9F8FF;
+  --color-bg-alt: #ffffff;
+  --color-text: #060607;
+  --color-text-muted: #555555;
+  --color-text-subtle: #888888;
+  --color-accent: #0016EC;
+  --color-accent-soft: #D9E6FF;
+  --color-border: #D9E6FF;
+  --color-btn-dark-bg: #2B2E3A;
+  --color-btn-dark-text: #D4D5D7;
+  --color-btn-light-bg: #E3E5EE;
+  --color-btn-light-text: #2B2E3A;
+  --color-btn-sm-bg: #E4E6EF;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0A0A0C;
+  --color-bg-alt: #131318;
+  --color-text: #F9F8FF;
+  --color-text-muted: #A8A8AE;
+  --color-text-subtle: #6E6E76;
+  --color-accent: #4A83FF;
+  --color-accent-soft: #1B2540;
+  --color-border: #1F2942;
+  --color-btn-dark-bg: #F9F8FF;
+  --color-btn-dark-text: #060607;
+  --color-btn-light-bg: #1F2942;
+  --color-btn-light-text: #F9F8FF;
+  --color-btn-sm-bg: #1F2942;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ── NAV BUTTONS ── */
+.nav_btn_lg {
+  border-radius: 9999px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  height: 2.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.nav_btn_dark {
+  background-color: var(--color-btn-dark-bg);
+  color: var(--color-btn-dark-text);
+}
+.nav_btn_light {
+  color: var(--color-btn-light-text);
+  background-color: var(--color-btn-light-bg);
+}
+.nav_btn_sm {
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--color-btn-sm-bg);
+  color: var(--color-btn-light-text);
+}
+
+/* ── LOADER ── */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+#loader-counter {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── HERO ── */
+#hero-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.hero-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+#hero-bg-fluid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.hero-end-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-text);
+  z-index: 20;
+}
+
+#hero-img {
+  position: absolute;
+  top: 50%;
+  left: calc(51% - 40px);
+  transform: translate(-50%, -50%);
+  width: 88vh;
+  height: 110vh;
+  z-index: 10;
+}
+
+#hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero-stroke-1 {
+  position: absolute;
+  top: 65%;
+  left: -2%;
+  transform: translateY(-50%);
+  width: 22vw;
+  height: 32vh;
+  pointer-events: none;
+  z-index: 11;
+  overflow: hidden;
+}
+#hero-stroke-1 img {
+  width: 22vw;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+}
+#hero-stroke-1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent-soft);
+  -webkit-mask-image: url('/Svg_Stroke.png');
+  mask-image: url('/Svg_Stroke.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#hero-stroke-2 {
+  position: absolute;
+  top: 12%;
+  right: 0%;
+  width: 16vw;
+  height: 26vh;
+  transform: rotateY(180deg);
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+#hero-stroke-2 img {
+  width: 16vw;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+}
+#hero-stroke-2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent-soft);
+  -webkit-mask-image: url('/Svg_Stroke.png');
+  mask-image: url('/Svg_Stroke.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#hero-heading {
+  color: var(--color-text);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  z-index: 5;
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 0.9;
+}
