@@ -6,7 +6,7 @@ import { Trail } from "./TrailText";
 import LetsTalk from "./LetsTalk";
 import MenuButton from "./MenuButton";
 
-import MusicButton from "./MusicButton";
+import MusicButton from "./MusicButton"; // naam MusicButton hai, par ye actually Dark/Light theme switch hai
 
 // Shared contact targets — same as Menu/Contact/SiteFooter.
 const EMAIL = "khendkarpranay@gmail.com";
@@ -91,23 +91,26 @@ function Navbar() {
           >
             ELFEKKY
           </a>
-          <button
-            type="button"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            className="nav_btn_sm flex items-center justify-center cursor-pointer"
-            onMouseEnter={() => !mobileOpen && setRotate({ transform: "rotate(90deg)" })}
-            onMouseLeave={() => !mobileOpen && setRotate({ transform: "rotate(0deg)" })}
-            onClick={() => {
-              const next = !mobileOpen;
-              setMobileOpen(next);
-              setRotate({ transform: next ? "rotate(45deg)" : "rotate(0deg)" });
-            }}
-          >
-            <animated.div className="text-[0.55rem] leading-none" style={rotate}>
-              {mobileOpen ? "✕" : "⬤ ⬤"}
-            </animated.div>
-          </button>
+          <div className="flex items-center gap-2">
+            <MusicButton />
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              className="nav_btn_sm flex items-center justify-center cursor-pointer"
+              onMouseEnter={() => !mobileOpen && setRotate({ transform: "rotate(90deg)" })}
+              onMouseLeave={() => !mobileOpen && setRotate({ transform: "rotate(0deg)" })}
+              onClick={() => {
+                const next = !mobileOpen;
+                setMobileOpen(next);
+                setRotate({ transform: next ? "rotate(45deg)" : "rotate(0deg)" });
+              }}
+            >
+              <animated.div className="text-[0.55rem] leading-none" style={rotate}>
+                {mobileOpen ? "✕" : "⬤ ⬤"}
+              </animated.div>
+            </button>
+          </div>
         </div>
       </div>
 
