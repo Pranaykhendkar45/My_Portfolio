@@ -1,18 +1,35 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
+/* ── TAILWIND THEME MAPPING ──
+   Ye block Tailwind ko batata hai ki bg-fg, text-fg, bg-brblue jaisी
+   custom classes actual CSS variables se banao. Isके bina ye classes
+   kaam nahi karti aur elements transparent/invisible dikhte hain. */
+@theme {
+  --color-bg: var(--tok-bg);
+  --color-bg-alt: var(--tok-bg-alt);
+  --color-fg: var(--tok-text);
+  --color-fg-muted: var(--tok-text-muted);
+  --color-fg-subtle: var(--tok-text-subtle);
+  --color-accent: var(--tok-accent);
+  --color-accent-soft: var(--tok-accent-soft);
+  --color-theme-border: var(--tok-border);
+  --color-brblue: var(--tok-accent);
+  --color-brgray: var(--tok-bg-alt);
+}
+
 /* ── THEME TOKENS ── */
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --color-bg: #F9F8FF;
-  --color-bg-alt: #ffffff;
-  --color-text: #060607;
-  --color-text-muted: #555555;
-  --color-text-subtle: #888888;
-  --color-accent: #0016EC;
-  --color-accent-soft: #D9E6FF;
-  --color-border: #D9E6FF;
+  --tok-bg: #F9F8FF;
+  --tok-bg-alt: #ffffff;
+  --tok-text: #060607;
+  --tok-text-muted: #555555;
+  --tok-text-subtle: #888888;
+  --tok-accent: #0016EC;
+  --tok-accent-soft: #D9E6FF;
+  --tok-border: #D9E6FF;
   --color-btn-dark-bg: #2B2E3A;
   --color-btn-dark-text: #D4D5D7;
   --color-btn-light-bg: #E3E5EE;
@@ -21,14 +38,14 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #0A0A0C;
-  --color-bg-alt: #131318;
-  --color-text: #F9F8FF;
-  --color-text-muted: #A8A8AE;
-  --color-text-subtle: #6E6E76;
-  --color-accent: #4A83FF;
-  --color-accent-soft: #1B2540;
-  --color-border: #1F2942;
+  --tok-bg: #0A0A0C;
+  --tok-bg-alt: #131318;
+  --tok-text: #F9F8FF;
+  --tok-text-muted: #A8A8AE;
+  --tok-text-subtle: #6E6E76;
+  --tok-accent: #4A83FF;
+  --tok-accent-soft: #1B2540;
+  --tok-border: #1F2942;
   --color-btn-dark-bg: #F9F8FF;
   --color-btn-dark-text: #060607;
   --color-btn-light-bg: #1F2942;
@@ -37,8 +54,8 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--tok-bg);
+  color: var(--tok-text);
   font-family: var(--font-inter), 'Inter', sans-serif;
 }
 
@@ -81,7 +98,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background-color: var(--color-bg);
+  background-color: var(--tok-bg);
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -90,7 +107,7 @@ body {
 #loader-counter {
   font-size: 3rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--tok-text);
 }
 
 /* ── HERO ── */
@@ -99,7 +116,7 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-color: var(--color-bg);
+  background-color: var(--tok-bg);
 }
 
 .hero-layer {
@@ -128,14 +145,14 @@ body {
   left: 0;
   width: 100%;
   height: 6px;
-  background-color: var(--color-text);
+  background-color: var(--tok-text);
   z-index: 20;
 }
 
 #hero-img {
   position: absolute;
   top: 50%;
-  left: calc(51% - 40px);
+  left: calc(52% - 40px);
   transform: translate(-50%, -50%);
   width: 88vh;
   height: 110vh;
@@ -169,7 +186,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--color-accent-soft);
+  background-color: var(--tok-accent-soft);
   -webkit-mask-image: url('/Svg_Stroke.png');
   mask-image: url('/Svg_Stroke.png');
   -webkit-mask-size: 100% 100%;
@@ -200,7 +217,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--color-accent-soft);
+  background-color: var(--tok-accent-soft);
   -webkit-mask-image: url('/Svg_Stroke.png');
   mask-image: url('/Svg_Stroke.png');
   -webkit-mask-size: 100% 100%;
@@ -211,7 +228,7 @@ body {
 }
 
 #hero-heading {
-  color: var(--color-text);
+  color: var(--tok-text);
   position: absolute;
   top: 45%;
   left: 50%;
