@@ -1,10 +1,12 @@
 import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import SmoothScroll from "./components/SmoothScroll";
+import InkbleedCursor from "./components/InkbleedCursor/InkbleedCursor";
 
 function App() {
   return (
     <SmoothScroll>
+      <InkbleedCursor />
       <Navbar />
       <HeroSection />
       {/* Baaki sections yahan neeche add karte jaana, jaise: */}
