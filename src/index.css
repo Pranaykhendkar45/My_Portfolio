@@ -22,12 +22,12 @@
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --tok-bg: #F9F8FF;
+  --tok-bg: ##F9F8FF;
   --tok-bg-alt: #ffffff;
   --tok-text: #060607;
   --tok-text-muted: #555555;
   --tok-text-subtle: #888888;
-  --tok-accent: #0016EC;
+  --tok-accent: #2B2E3A;
   --tok-accent-soft: #D9E6FF;
   --tok-border: #D9E6FF;
   --color-btn-dark-bg: #2B2E3A;
@@ -43,7 +43,7 @@
   --tok-text: #F9F8FF;
   --tok-text-muted: #A8A8AE;
   --tok-text-subtle: #6E6E76;
-  --tok-accent: #4A83FF;
+  --tok-accent: #f66b15;
   --tok-accent-soft: #1B2540;
   --tok-border: #1F2942;
   --color-btn-dark-bg: #F9F8FF;
@@ -242,4 +242,24 @@ body {
   pointer-events: none;
   white-space: nowrap;
   line-height: 0.9;
+}
+
+/* ── ABOUT SECTION THEME ACCENTS ── */
+.about-accent-text {
+  color: #f07c08;
+}
+[data-theme="dark"] .about-accent-text {
+  color: #ffffff;
+}
+
+.about-connect-btn {
+  color: #ffffff;
+}
+[data-theme="dark"] .about-connect-btn {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.about-meta-text {
+  color: #909090;
 }
