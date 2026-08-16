@@ -246,7 +246,7 @@ body {
 
 /* ── ABOUT SECTION THEME ACCENTS ── */
 .about-accent-text {
-  color: #f07c08;
+  color: #131318;
 }
 [data-theme="dark"] .about-accent-text {
   color: #ffffff;
@@ -262,4 +262,36 @@ body {
 
 .about-meta-text {
   color: #909090;
+}
+
+/* ── TECH ORBIT BOX THEME ──
+   Light mode: bg black, andar ka text/lines white
+   Dark mode: bg website jaisa (site ka dark bg), border white, andar ka text/lines black */
+.tech-orbit-box {
+  --torb-fg: #ffffff;      /* text/lines/icons ka color */
+  --torb-bg: #000000;      /* box ka background */
+  --torb-border: #ffffff;  /* border hamesha white */
+  background-color: var(--torb-bg);
+  border: 1px solid var(--torb-border);
+  color: var(--torb-fg);
+}
+[data-theme="dark"] .tech-orbit-box {
+  --torb-fg: #000000;
+  --torb-bg: var(--tok-bg);
+}
+
+/* ── BEAM CIRCLE CENTER ICON ──
+   Light mode: bg black, icon white
+   Dark mode: bg white, icon black */
+.beam-center-dot {
+  background-color: #000000;
+}
+.beam-center-icon {
+  color: #ffffff;
+}
+[data-theme="dark"] .beam-center-dot {
+  background-color: #ffffff;
+}
+[data-theme="dark"] .beam-center-icon {
+  color: #000000;
 }
