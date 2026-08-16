@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#242424 0%,#242424 100%)';
 
 const ANIMATION_CONFIG = {
   INITIAL_DURATION: 1200,
@@ -438,7 +438,7 @@ const ProfileCardComponent = ({
               'rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px) calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px',
             transition: 'transform 1s ease',
             transform: 'translateZ(0) rotateX(0deg) rotateY(0deg)',
-            background: 'rgba(0, 0, 0, 0.9)'
+            background: '#242424'
           }}
           onMouseEnter={e => {
             e.currentTarget.style.transition = 'none';
@@ -458,18 +458,12 @@ const ProfileCardComponent = ({
             className="absolute inset-0"
             style={{
               backgroundImage: 'var(--inner-gradient)',
-              backgroundColor: 'rgba(0, 0, 0, 0.9)',
+              backgroundColor: '#242424',
               borderRadius: cardRadius,
               display: 'grid',
               gridArea: '1 / -1'
             }}
           >
-            {/* Shine layer */}
-            <div style={shineStyle} />
-
-            {/* Glare layer */}
-            <div style={glareStyle} />
-
             {/* Avatar content */}
             <div
               className="overflow-visible backface-hidden"
