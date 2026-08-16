@@ -1,11 +1,22 @@
 import ProfileCard from "./ProfileCard";
+import { MorphText } from "./ui/morph-text";
+import { TypingText } from "./ui/typing-text";
+import CursorImageTrail from "./CursorImageTrail/CursorImageTrail";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 px-6 md:px-20 py-20 md:py-32"
+      className="w-full px-6 md:px-20 py-20 md:py-32"
     >
+      <CursorImageTrail
+        imageWidth={130}
+        imageHeight={130}
+        radius={12}
+        frequency={35}
+        visibleFor={1}
+        className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16"
+      >
       {/* LEFT SIDE — card, vertically centered */}
       <div className="w-full md:w-[38%] flex justify-center">
         <ProfileCard
@@ -26,7 +37,7 @@ const About = () => {
             )
           }
           behindGlowEnabled={false}
-          innerGradient="linear-gradient(145deg,#909090 0%,#909090 100%)"
+          innerGradient="linear-gradient(145deg,#242424 0%,#242424 100%)"
         />
       </div>
 
@@ -40,19 +51,59 @@ const About = () => {
           </span>
         </div>
 
-        {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-          Passionate. Curious.
-          <br />
-          <span className="about-accent-text">Problem Solver.</span>
-        </h2>
+        {/* Heading — morphing/cycling text effect */}
+        {/* ============================================================ */}
+        {/* ---- YAHAN SE NAYE WORDS ADD KARNE HAIN (jitne chahiye) ---- */}
+        <MorphText
+          words={[
+            {
+              content: "I am,Pranay Khendkar",
+              fontSize: "clamp(1.875rem, 5vw, 3rem)",
+              offsetX: "50px",
+              offsetY: "-10px",
+            },
+            "Problem Solver.",
+            "Crazy Engineer",
+            {
+              content: "I am,Pranay Khendkar",
+              fontSize: "clamp(1.875rem, 5vw, 3rem)",
+              offsetX: "50px",
+              offsetY: "-9px",
+            },
+            {
+              content: "Code that solves problems",
+              fontSize: "clamp(1.85rem, 5vw, 2.9rem)",
+              offsetX: "58px",
+              offsetY: "-9px",
+            },
+          ]}
+          interval={2200}
+          fontSize="clamp(1.875rem, 5vw, 3rem)"
+          fontFamily="inherit"
+          className="!items-start mb-6"
+          textClassName="!text-left about-accent-text font-bold leading-tight"
+        />
 
-        {/* Description */}
-        <p className="text-base md:text-lg leading-relaxed text-fg-muted mb-8 max-w-xl">
-          I'm a full-stack developer who loves turning ideas into
-          real-world digital products. I enjoy building clean, efficient
-          and user-friendly applications that solve meaningful problems.
-        </p>
+        {/* Description — typing (letter-by-letter reveal) effect */}
+        <TypingText
+          as="p"
+          className="text-base md:text-lg leading-relaxed text-fg-muted mb-8 max-w-xl"
+          fontSize=""
+          fontWeight=""
+          color=""
+          letterSpacing=""
+          align="left"
+          duration={2.5}
+          delay={0.2}
+          loop
+          pauseBeforeRepeat={1.5}
+        >
+          I'm a passionate Full-Stack Developer, aspiring Data Scientist, and
+          natural problem solver who enjoys turning ideas into impactful digital
+          experiences. I thrive on learning new technologies, leading collaborative
+          projects, and building clean, scalable, and user-focused applications
+          that create real-world value.
+        </TypingText>
 
         {/* Meta info row */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm about-meta-text">
@@ -83,7 +134,9 @@ const About = () => {
 
         {/* CTA button */}
         <a
-          href="#contact-section"
+          href="https://wa.me/919359260318"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-accent about-connect-btn font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
         >
           Let's Connect
@@ -93,6 +146,7 @@ const About = () => {
           </svg>
         </a>
       </div>
+      </CursorImageTrail>
     </section>
   );
 };
