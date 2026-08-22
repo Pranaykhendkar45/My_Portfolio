@@ -22,7 +22,7 @@
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --tok-bg: ##F9F8FF;
+  --tok-bg: #F9F8FF;
   --tok-bg-alt: #ffffff;
   --tok-text: #060607;
   --tok-text-muted: #555555;
