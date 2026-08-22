@@ -22,7 +22,7 @@
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --tok-bg: #F9F8FF;
+  --tok-bg: ##F9F8FF;
   --tok-bg-alt: #ffffff;
   --tok-text: #060607;
   --tok-text-muted: #555555;
@@ -278,6 +278,28 @@ body {
 [data-theme="dark"] .tech-orbit-box {
   --torb-fg: #000000;
   --torb-bg: var(--tok-bg);
+}
+
+/* ── CONTACT SECTION BUTTONS ── */
+.ct-btn-primary {
+  background-color: var(--tok-text);
+  color: var(--tok-bg);
+  border: 2px solid var(--tok-text);
+}
+.ct-btn-primary:hover {
+  background-color: var(--tok-accent);
+  border-color: var(--tok-accent);
+  color: var(--tok-bg);
+}
+.ct-btn-secondary {
+  background-color: transparent;
+  color: var(--tok-text);
+  border: 2px solid var(--tok-text);
+}
+.ct-btn-secondary:hover {
+  background-color: var(--tok-accent-soft);
+  border-color: var(--tok-accent-soft);
+  color: var(--tok-text);
 }
 
 /* ── BEAM CIRCLE CENTER ICON ──
