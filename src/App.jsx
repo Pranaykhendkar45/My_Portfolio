@@ -6,6 +6,9 @@ import LogoMarquee from "./components/LogoMarquee/LogoMarquee";
 import About from "./components/About";
 import TechOrbit from "./components/TechOrbit";
 import Projects from "./components/Projects";
+import Gallery from "./components/Gallery";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -17,8 +20,9 @@ function App() {
       <About />
       <TechOrbit />
       <Projects />
-      {/* Baaki sections yahan neeche add karte jaana, jaise: */}
-      {/* <div id="contact-section">...</div> */}
+      <Gallery />
+      <Contact />
+      <Footer />
     </SmoothScroll>
   );
 }
