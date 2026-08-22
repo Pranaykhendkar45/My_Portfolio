@@ -26,20 +26,20 @@ const projects = [
     liveUrl: "https://sept-ai.onrender.com/",
     color: "#6b4226",
   },
-  {
-    title: "Coming Soon",
-    description: "Ye project abhi banaya ja raha hai — jald hi yahan aayega.",
-    link: null,
-    liveUrl: null,
-    color: "#d9822b",
-  },
-  {
-    title: "Coming Soon",
-    description: "Ye project abhi banaya ja raha hai — jald hi yahan aayega.",
-    link: null,
-    liveUrl: null,
-    color: "#c48b9f",
-  },
+  // {
+  //   title: "Coming Soon",
+  //   description: "Ye project abhi banaya ja raha hai — jald hi yahan aayega.",
+  //   link: null,
+  //   liveUrl: null,
+  //   color: "#d9822b",
+  // },
+  // {
+  //   title: "Coming Soon",
+  //   description: "Ye project abhi banaya ja raha hai — jald hi yahan aayega.",
+  //   link: null,
+  //   liveUrl: null,
+  //   color: "#c48b9f",
+  // },
 ];
 
 const Projects = () => {

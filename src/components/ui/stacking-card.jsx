@@ -46,11 +46,10 @@ export const Card = ({ i, title, description, url, liveUrl, color, progress, ran
         onMouseLeave={() => setIsHovering(false)}
         onMouseMove={handleMouseMove}
         style={{
-          backgroundColor: color,
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="flex flex-col relative -top-[25%] h-[480px] md:h-[500px] w-[90%] md:w-[75%] rounded-md p-8 md:p-14 origin-top text-white"
+        className="flex flex-col relative -top-[25%] h-[480px] md:h-[500px] w-[90%] md:w-[75%] rounded-[3rem] p-8 md:p-14 origin-top bg-bg-alt text-fg border border-theme-border shadow-[12px_12px_0px_0px_rgba(0,0,0,0.35)]"
       >
         <h2 className="text-xl md:text-2xl text-center font-semibold">{title}</h2>
         <div className="flex flex-col md:flex-row h-full mt-5 gap-6 md:gap-10">
@@ -61,10 +60,9 @@ export const Card = ({ i, title, description, url, liveUrl, color, progress, ran
                 <a href={liveUrl} target="_blank" rel="noreferrer" className="underline cursor-pointer">
                   See more
                 </a>
-                <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-fg">
                   <path
                     d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
-                    fill="black"
                   />
                 </svg>
               </span>
@@ -77,8 +75,8 @@ export const Card = ({ i, title, description, url, liveUrl, color, progress, ran
                 <img src={url} alt={title} className="absolute inset-0 w-full h-full object-cover" />
               </motion.div>
             ) : (
-              <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-black/20">
-                <span className="text-2xl md:text-4xl font-bold uppercase tracking-widest text-white/70">
+              <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-fg/10">
+                <span className="text-2xl md:text-4xl font-bold uppercase tracking-widest text-fg/50">
                   Coming Soon
                 </span>
               </div>
