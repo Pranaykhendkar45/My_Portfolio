@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+/* Stylish display grotesk — PP Neue Montreal / Suisse Int'l / Neue Haas
+   Grotesk / Aquire / Nexo Kora are all paid, licensed fonts (not
+   redistributable), so "General Sans" (free, Fontshare) is used here as
+   the closest-feeling free alternative for About/Projects headings. */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
 
 /* ── TAILWIND THEME MAPPING ──
    Ye block Tailwind ko batata hai ki bg-fg, text-fg, bg-brblue jaisी
@@ -22,7 +27,7 @@
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --tok-bg: ##F9F8FF;
+  --tok-bg: #FFF;
   --tok-bg-alt: #ffffff;
   --tok-text: #060607;
   --tok-text-muted: #555555;
@@ -51,6 +56,10 @@
   --color-btn-light-bg: #1F2942;
   --color-btn-light-text: #F9F8FF;
   --color-btn-sm-bg: #1F2942;
+}
+
+.font-display {
+  font-family: 'General Sans', var(--font-inter), 'Inter', sans-serif;
 }
 
 body {
@@ -270,9 +279,7 @@ body {
 .tech-orbit-box {
   --torb-fg: #ffffff;      /* text/lines/icons ka color */
   --torb-bg: #000000;      /* box ka background */
-  --torb-border: #ffffff;  /* border hamesha white */
   background-color: var(--torb-bg);
-  border: 1px solid var(--torb-border);
   color: var(--torb-fg);
 }
 [data-theme="dark"] .tech-orbit-box {
