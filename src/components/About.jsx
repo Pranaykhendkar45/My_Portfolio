@@ -81,7 +81,7 @@ const About = () => {
           fontSize="clamp(1.875rem, 5vw, 3rem)"
           fontFamily="inherit"
           className="!items-start mb-6"
-          textClassName="!text-left about-accent-text font-bold leading-tight"
+          textClassName="!text-left about-accent-text font-bold leading-tight font-display"
         />
 
         {/* Description — typing (letter-by-letter reveal) effect */}
