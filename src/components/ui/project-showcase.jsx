@@ -144,7 +144,7 @@ export function ProjectShowcase() {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="relative py-5 border-t border-theme-border transition-all duration-300 ease-out">
+            <div className="relative py-5 transition-all duration-300 ease-out">
               {/* Background highlight on hover */}
               <div
                 className={`
@@ -157,7 +157,7 @@ export function ProjectShowcase() {
               <div className="relative flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="inline-flex items-center gap-2">
-                    <h3 className="text-fg font-medium text-lg tracking-tight">
+                    <h3 className="text-fg font-medium text-lg tracking-tight font-display">
                       <span className="relative">
                         {project.title}
                         <span
@@ -207,8 +207,6 @@ export function ProjectShowcase() {
             </div>
           </a>
         ))}
-
-        <div className="border-t border-theme-border" />
       </div>
     </section>
   );
