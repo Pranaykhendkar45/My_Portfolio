@@ -1,10 +1,86 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-/* Stylish display grotesk — PP Neue Montreal / Suisse Int'l / Neue Haas
-   Grotesk / Aquire / Nexo Kora are all paid, licensed fonts (not
-   redistributable), so "General Sans" (free, Fontshare) is used here as
-   the closest-feeling free alternative for About/Projects headings. */
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap');
+
+/* ── CUSTOM STYLISH FONTS (self-hosted, from /public/fonts) ──
+   IMPORTANT: Neue Montreal, Aquire, Nexo Kora Techno aur Suisse Int'l
+   sab commercial/licensed typefaces hain — jo files use ki hain wo
+   "Personal Use" / trial copies hain (Suisse ki apni license file mein
+   saaf likha hai "Personal Use Only", Nexo Kora ki license file mein
+   "agar paison ke liye use karo to license kharido"). Site jab live/public
+   ho jaaye, in fonts ka proper webfont license foundry se lena zaroori
+   hoga, warna copyright issue ho sakta hai:
+     Neue Montreal    -> pangrampangram.com
+     Suisse Int'l      -> swisstypefaces.com
+     Aquire            -> jahan se mila wahi foundry/marketplace
+     Nexo Kora Techno  -> nirmanavisual.com/license
+   Code side se sab already wired hai, bas license lena user ki
+   responsibility hai. */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexokora Techno';
+  src: url('/fonts/NexokoraTechno-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aquire';
+  src: url('/fonts/Aquire-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aquire';
+  src: url('/fonts/Aquire-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl Cond';
+  src: url('/fonts/SuisseIntlCond-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl Cond';
+  src: url('/fonts/SuisseIntlCond-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suisse Intl Mono';
+  src: url('/fonts/SuisseIntlMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ── TAILWIND THEME MAPPING ──
    Ye block Tailwind ko batata hai ki bg-fg, text-fg, bg-brblue jaisी
@@ -27,7 +103,7 @@
 :root,
 [data-theme="light"] {
   --font-inter: 'Inter', sans-serif;
-  --tok-bg: #FFF;
+  --tok-bg: #F9F8FF;
   --tok-bg-alt: #ffffff;
   --tok-text: #060607;
   --tok-text-muted: #555555;
@@ -58,8 +134,25 @@
   --color-btn-sm-bg: #1F2942;
 }
 
+/* Body/heading grotesk — main "stylish sans" replacement */
 .font-display {
-  font-family: 'General Sans', var(--font-inter), 'Inter', sans-serif;
+  font-family: 'Neue Montreal', var(--font-inter), 'Inter', sans-serif;
+}
+/* Big decorative display type — hero-ish headings */
+.font-hero {
+  font-family: 'Aquire', 'Neue Montreal', var(--font-inter), 'Inter', sans-serif;
+}
+/* Small tracked uppercase labels/badges (ABOUT ME, GALLERY, etc.) */
+.font-label {
+  font-family: 'Nexokora Techno', var(--font-inter), 'Inter', sans-serif;
+}
+/* Condensed grotesk — good for tight/dense text */
+.font-cond {
+  font-family: 'Suisse Intl Cond', var(--font-inter), 'Inter', sans-serif;
+}
+/* Mono — numbers, years, tabular data */
+.font-suisse-mono {
+  font-family: 'Suisse Intl Mono', 'ui-monospace', monospace;
 }
 
 body {

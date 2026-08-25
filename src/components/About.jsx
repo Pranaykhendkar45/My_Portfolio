@@ -46,7 +46,7 @@ const About = () => {
         {/* Badge */}
         <div className="flex items-center gap-2 mb-5">
           <span className="w-2 h-2 rounded-full bg-accent" />
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase about-accent-text">
+          <span className="text-xl md:text-3xl font-semibold tracking-[0.2em] uppercase about-accent-text font-label">
             About Me
           </span>
         </div>
@@ -81,13 +81,13 @@ const About = () => {
           fontSize="clamp(1.875rem, 5vw, 3rem)"
           fontFamily="inherit"
           className="!items-start mb-6"
-          textClassName="!text-left about-accent-text font-bold leading-tight font-display"
+          textClassName="!text-left about-accent-text font-bold leading-tight font-hero"
         />
 
         {/* Description — typing (letter-by-letter reveal) effect */}
         <TypingText
           as="p"
-          className="text-base md:text-lg leading-relaxed text-fg-muted mb-8 max-w-xl"
+          className="text-base md:text-lg leading-relaxed text-fg-muted mb-8 max-w-xl font-bold"
           fontSize=""
           fontWeight=""
           color=""
@@ -106,7 +106,7 @@ const About = () => {
         </TypingText>
 
         {/* Meta info row */}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm about-meta-text">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm about-meta-text font-cond">
           <div className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="4" width="18" height="18" rx="2" />

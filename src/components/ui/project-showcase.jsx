@@ -196,7 +196,7 @@ export function ProjectShowcase() {
 
                 <span
                   className={`
-                    text-xs font-mono text-fg-muted tabular-nums
+                    text-xs font-suisse-mono text-fg-muted tabular-nums
                     transition-all duration-300 ease-out
                     ${hoveredIndex === index ? "text-fg/60" : ""}
                   `}

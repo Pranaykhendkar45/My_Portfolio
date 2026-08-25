@@ -48,7 +48,7 @@ const Projects = () => {
       {/* Badge — Tech Stack section jaisa hi style */}
       <div className="flex items-center justify-center gap-2 pt-10 pb-4 md:pt-14 md:pb-6">
         <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-        <span className="text-lg md:text-2xl font-bold tracking-[0.2em] uppercase about-accent-text font-display">
+        <span className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase about-accent-text font-label">
           My Projects
         </span>
       </div>
