@@ -30,15 +30,15 @@ const MIN_LOCK_MS = 5000;
 
 // ---- LOCK KAHAN TRIGGER HO, YAHAN SE ADJUST KARO ----
 // Values 0 se 1 ke beech — 0 = screen ka bilkul top, 1 = bilkul bottom.
-// Neeche scroll karte waqt (upar se niche aate waqt) gallery jab is
-// point tak pahunche, tab lock lagega — number badhao (jaise 0.7) to
-// lock "thoda niche" lagega, ghatao (jaise 0.4) to "thoda upar" lagega.
-const LOCK_TRIGGER_PERCENT_SCROLLING_DOWN = 0.78;
+// Niche scroll karte waqt (upar se niche aate waqt) gallery jab is
+// point tak pahunche, tab lock lagega.
+const LOCK_TRIGGER_PERCENT_DOWN = 0.1;
 
 // Upar scroll karte waqt (niche se upar aate waqt) gallery jab is point
-// tak pahunche, tab lock lagega — number ghatao (jaise 0.3) to lock
-// "thoda upar" lagega, badhao (jaise 0.6) to "thoda niche" lagega.
-const LOCK_TRIGGER_PERCENT_SCROLLING_UP = 0.2;
+// tak pahunche, tab lock lagega — ye DOWN wale se ALAG value ho sakti
+// hai, dono independently tune karo jab tak dono directions mein
+// sahi jagah stick na ho.
+const LOCK_TRIGGER_PERCENT_UP = 0.94;
 
 const Gallery = () => {
   // Mobile pe kam planes render karo — perf ke liye, aur chhoti height rakho.
@@ -88,9 +88,7 @@ const Gallery = () => {
     // direction ke apne trigger point tak pahunch chuka ho.
     const coversTriggerLine = rect => {
       const percent =
-        directionRef.current === "down"
-          ? LOCK_TRIGGER_PERCENT_SCROLLING_DOWN
-          : LOCK_TRIGGER_PERCENT_SCROLLING_UP;
+        directionRef.current === "down" ? LOCK_TRIGGER_PERCENT_DOWN : LOCK_TRIGGER_PERCENT_UP;
       const lineY = window.innerHeight * percent;
       return rect.top <= lineY && rect.bottom >= lineY;
     };
@@ -114,6 +112,19 @@ const Gallery = () => {
       lockStartRef.current = Date.now();
       setLocked(true);
       window.__lenis?.stop();
+    };
+
+    // Sirf re-arm karta hai jab section viewport se bahar chala jaaye.
+    // Lock ENGAGE nahi karta — isse menu-navigation (Lenis.scrollTo se
+    // hone wala programmatic "scroll" event) accidentally lock trigger
+    // nahi karti. Lock sirf real user gesture (wheel/touchmove) se lagta
+    // hai, jo neeche onWheel/onTouchMove ke andar tryEnterLock() call
+    // karte hain.
+    const armOnExit = () => {
+      const rect = target.getBoundingClientRect();
+      if (!isIntersectingViewport(rect)) {
+        armedRef.current = true;
+      }
     };
 
     const releaseLock = () => {
@@ -151,12 +162,12 @@ const Gallery = () => {
 
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("scroll", tryEnterLock, { passive: true });
+    window.addEventListener("scroll", armOnExit, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("scroll", tryEnterLock);
+      window.removeEventListener("scroll", armOnExit);
       // Agar component unmount ho jaaye jab locked ho, page scroll ko
       // hamesha ke liye freeze mat chhodo.
       if (lockedRef.current) {
@@ -169,7 +180,7 @@ const Gallery = () => {
     <section id="gallery-section" ref={sectionRef} className="w-full bg-bg text-fg py-16 md:py-24">
       <div className="flex items-center justify-center gap-2 pb-6 md:pb-10">
         <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-        <span className="text-lg md:text-2xl font-bold tracking-[0.2em] uppercase about-accent-text">
+        <span className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase about-accent-text font-label">
           Gallery
         </span>
       </div>
