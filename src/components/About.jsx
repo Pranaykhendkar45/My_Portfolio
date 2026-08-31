@@ -77,7 +77,7 @@ const About = () => {
               offsetY: "-9px",
             },
           ]}
-          interval={2200}
+          interval={3000}
           fontSize="clamp(1.875rem, 5vw, 3rem)"
           fontFamily="inherit"
           className="!items-start mb-6"
@@ -93,7 +93,7 @@ const About = () => {
           color=""
           letterSpacing=""
           align="left"
-          duration={2.5}
+          duration={5}
           delay={0.2}
           loop
           pauseBeforeRepeat={1.5}
