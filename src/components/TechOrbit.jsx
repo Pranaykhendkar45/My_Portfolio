@@ -1,23 +1,6 @@
-import { useEffect, useState } from "react";
-import BeamCircle from "./BeamCircle";
+import { SolarSystem } from "./ui/solar-system";
 
 const TechOrbit = () => {
-  // Screen chhoti ho to circle bhi chhota ho jaye (overflow/horizontal
-  // scroll na ho) — bade screen pe 620px tak jaata hai.
-  // Icons circle ki boundary se thoda bahar bhi nikalte hain, isliye
-  // extra buffer (EDGE_BUFFER) rakha hai taaki wo bhi cut/overflow na ho.
-  const EDGE_BUFFER = 120;
-  const [circleSize, setCircleSize] = useState(620);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setCircleSize(Math.min(620, window.innerWidth - EDGE_BUFFER));
-    };
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
   return (
     <section
       id="tech-orbit"
@@ -31,9 +14,8 @@ const TechOrbit = () => {
         </span>
       </div>
 
-      {/* Center mein BeamCircle — full screen ke hisab se bada size */}
-      {/* ---- YAHAN SE MAX SIZE CHANGE HOTI HAI (620) ---- */}
-      <BeamCircle size={circleSize} />
+      {/* Center mein naya 3D SolarSystem orbit — apne aap responsive hai */}
+      <SolarSystem />
     </section>
   );
 };
