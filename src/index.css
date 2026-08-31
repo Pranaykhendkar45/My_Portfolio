@@ -178,12 +178,34 @@ body {
   margin-right: 0.5rem;
 }
 .nav_btn_dark {
-  background-color: var(--color-btn-dark-bg);
+  background-color: var(--color-btn-dark-bg); /* fallback if color-mix() unsupported */
+  background-color: color-mix(in srgb, var(--color-btn-dark-bg) 35%, transparent);
   color: var(--color-btn-dark-text);
+  border: 2px solid var(--tok-accent); /* fallback */
+  border: 2px solid color-mix(in srgb, var(--tok-accent) 75%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--tok-accent) 35%, transparent);
 }
 .nav_btn_light {
   color: var(--color-btn-light-text);
-  background-color: var(--color-btn-light-bg);
+  background-color: var(--color-btn-light-bg); /* fallback */
+  background-color: color-mix(in srgb, var(--color-btn-light-bg) 35%, transparent);
+  border: 2px solid var(--tok-accent); /* fallback */
+  border: 2px solid color-mix(in srgb, var(--tok-accent) 75%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--tok-accent) 35%, transparent);
+}
+/* Reusable glass pill — used on the MENU button too */
+.nav_btn_glass {
+  background-color: var(--tok-bg-alt); /* fallback */
+  background-color: color-mix(in srgb, var(--tok-bg-alt) 35%, transparent) !important;
+  border: 2px solid var(--tok-accent); /* fallback */
+  border: 2px solid color-mix(in srgb, var(--tok-accent) 75%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--tok-accent) 35%, transparent);
 }
 .nav_btn_sm {
   border-radius: 9999px;
@@ -381,6 +403,15 @@ body {
 }
 
 /* ── CONTACT SECTION BUTTONS ── */
+.ct-glass-behind {
+  background-color: var(--tok-accent-soft); /* fallback */
+  background-color: color-mix(in srgb, var(--tok-accent-soft) 65%, transparent);
+  border: 2px solid var(--tok-accent); /* fallback */
+  border: 2px solid color-mix(in srgb, var(--tok-accent) 70%, transparent);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  box-shadow: 0 20px 80px color-mix(in srgb, var(--tok-accent) 45%, transparent);
+}
 .ct-btn-primary {
   background-color: var(--tok-text);
   color: var(--tok-bg);
