@@ -71,9 +71,7 @@ const MenuButton = () => {
         // Background colors are sourced from theme tokens (bg-brgray ↔
         // bg-bg-alt) so the button visually adapts to light/dark mode
         // without keeping a hardcoded hex in component state.
-        className={`nav_btn_lg py-6 flex items-center justify-center cursor-pointer transition-colors duration-200 ${
-          isOpen ? "bg-bg-alt" : "bg-brgray hover:bg-bg-alt"
-        }`}
+        className={`nav_btn_lg nav_btn_glass py-6 flex items-center justify-center cursor-pointer transition-colors duration-200`}
         ref={ref}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

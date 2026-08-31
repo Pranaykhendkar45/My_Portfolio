@@ -102,16 +102,22 @@ const Contact = () => {
         {splitChars("have a project in mind?")}
       </div>
 
-      <h2
-        ref={headlineRef}
-        className="about-accent-text font-semibold lowercase pointer-events-none leading-[0.9] m-0"
-        style={{
-          fontSize: "clamp(3rem, 18vw, 18rem)",
-          letterSpacing: "-0.07em",
-        }}
-      >
-        {splitChars("let's talk.")}
-      </h2>
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="ct-glass-behind absolute -inset-4 md:-inset-8 -z-10 rounded-[2rem] md:rounded-[3rem]"
+        />
+        <h2
+          ref={headlineRef}
+          className="about-accent-text font-semibold lowercase pointer-events-none leading-[0.9] m-0"
+          style={{
+            fontSize: "clamp(3rem, 18vw, 18rem)",
+            letterSpacing: "-0.07em",
+          }}
+        >
+          {splitChars("let's talk.")}
+        </h2>
+      </div>
 
       <a
         ref={emailRef}
