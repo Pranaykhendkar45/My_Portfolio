@@ -402,35 +402,39 @@ body {
   --torb-bg: var(--tok-bg);
 }
 
-/* ── CONTACT SECTION BUTTONS ── */
-.ct-glass-behind {
-  background-color: var(--tok-accent-soft); /* fallback */
-  background-color: color-mix(in srgb, var(--tok-accent-soft) 65%, transparent);
-  border: 2px solid var(--tok-accent); /* fallback */
-  border: 2px solid color-mix(in srgb, var(--tok-accent) 70%, transparent);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  box-shadow: 0 20px 80px color-mix(in srgb, var(--tok-accent) 45%, transparent);
+/* ── CONTACT SECTION: bordered "have an idea" box ── */
+.ct-box {
+  background-color: var(--tok-bg-alt);
+}
+.ct-box-glow {
+  background: radial-gradient(
+    600px 260px at 50% 0%,
+    color-mix(in srgb, var(--tok-accent) 22%, transparent),
+    transparent 70%
+  );
+}
+.ct-shipit {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--tok-accent) 45%, transparent);
 }
 .ct-btn-primary {
-  background-color: var(--tok-text);
+  background-color: var(--tok-accent);
+  color: #fff;
+  border: 2px solid var(--tok-accent);
+}
+[data-theme="light"] .ct-btn-primary {
   color: var(--tok-bg);
-  border: 2px solid var(--tok-text);
 }
 .ct-btn-primary:hover {
-  background-color: var(--tok-accent);
-  border-color: var(--tok-accent);
-  color: var(--tok-bg);
+  filter: brightness(1.08);
 }
 .ct-btn-secondary {
   background-color: transparent;
   color: var(--tok-text);
-  border: 2px solid var(--tok-text);
+  border: 2px solid var(--tok-border);
 }
 .ct-btn-secondary:hover {
   background-color: var(--tok-accent-soft);
-  border-color: var(--tok-accent-soft);
-  color: var(--tok-text);
+  border-color: var(--tok-accent);
 }
 
 /* ── BEAM CIRCLE CENTER ICON ──
@@ -447,4 +451,23 @@ body {
 }
 [data-theme="dark"] .beam-center-icon {
   color: #000000;
+}
+
+/* ── Testimonials marquee (community section) ── */
+.testimonial-marquee {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: testimonial-marquee 60s linear infinite;
+}
+.testimonial-marquee-wrap:hover .testimonial-marquee,
+.testimonial-marquee-wrap:focus-within .testimonial-marquee {
+  animation-play-state: paused;
+}
+@keyframes testimonial-marquee {
+  to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee { animation: none; width: auto; overflow-x: auto; }
+  .testimonial-marquee [aria-hidden="true"] { display: none; }
 }

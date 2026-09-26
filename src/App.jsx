@@ -6,6 +6,7 @@ import LogoMarquee from "./components/LogoMarquee/LogoMarquee";
 import About from "./components/About";
 import TechOrbit from "./components/TechOrbit";
 import Projects from "./components/Projects";
+import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
@@ -20,6 +21,7 @@ function App() {
       <About />
       <TechOrbit />
       <Projects />
+      <Testimonials />
       <Gallery />
       <Contact />
       <Footer />
