@@ -1,152 +1,205 @@
-import ProfileCard from "./ProfileCard";
-import { MorphText } from "./ui/morph-text";
-import { TypingText } from "./ui/typing-text";
-import CursorImageTrail from "./CursorImageTrail/CursorImageTrail";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import SectionBadge from "./ui/section-badge";
+import { SplitText } from "./ui/split-text";
+
+const rise = (i) => ({
+  initial: { opacity: 0, y: 18 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.5, delay: i * 0.08, ease: "easeOut" },
+});
+
+const Card = ({ className = "", children, ...rest }) => (
+  <div
+    className={`relative rounded-2xl border border-theme-border bg-bg-alt ${className}`}
+    {...rest}
+  >
+    {children}
+  </div>
+);
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="w-full px-6 md:px-20 py-20 md:py-32"
-    >
-      <CursorImageTrail
-        imageWidth={130}
-        imageHeight={130}
-        radius={12}
-        frequency={35}
-        visibleFor={1}
-        className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16"
-      >
-      {/* LEFT SIDE — card, vertically centered */}
-      <div className="w-full md:w-[38%] flex justify-center">
-        <ProfileCard
-          name="Pranay Khendkar"
-          title="Crazy Engineer"
-          handle="Ig.pranay_khendkar"
-          status="Online"
-          contactText="Contact Me"
-          avatarUrl="/Avater.png"
-          showUserInfo
-          enableTilt={true}
-          enableMobileTilt
-          onContactClick={() =>
-            window.open(
-              "https://www.instagram.com/ig.pranay_khendkar?igsh=MXV3aGRlc24xeTBnMg==",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
-          behindGlowEnabled={false}
-          innerGradient="linear-gradient(145deg,#242424 0%,#242424 100%)"
-        />
-      </div>
+    <section id="about" className="w-full px-5 md:px-8 py-20 md:py-32">
+      <div className="mx-auto max-w-6xl">
+        {/* Badge + heading */}
+        <motion.div {...rise(0)} className="flex justify-center md:justify-start">
+          <SectionBadge>About Me</SectionBadge>
+        </motion.div>
 
-      {/* RIGHT SIDE — text content */}
-      <div className="w-full md:w-[55%] text-fg">
-        {/* Badge */}
-        <div className="flex items-center gap-2 mb-5">
-          <span className="w-2 h-2 rounded-full bg-accent" />
-          <span className="text-xl md:text-3xl font-semibold tracking-[0.2em] uppercase about-accent-text font-label">
-            About Me
-          </span>
-        </div>
+        <motion.div {...rise(1)}>
+          <h2
+            className="mt-6 max-w-4xl text-center md:text-left font-hero font-bold leading-[1.05] tracking-tight text-fg"
+            style={{ fontSize: "clamp(2rem, 6vw, 4.25rem)" }}
+          >
+            <SplitText as="span" className="inline">
+              I build web apps that solve{" "}
+            </SplitText>
+            <SplitText as="span" className="inline text-accent">
+              real problems
+            </SplitText>
+          </h2>
+        </motion.div>
 
-        {/* Heading — morphing/cycling text effect */}
-        {/* ============================================================ */}
-        {/* ---- YAHAN SE NAYE WORDS ADD KARNE HAIN (jitne chahiye) ---- */}
-        <MorphText
-          words={[
-            {
-              content: "I am,Pranay Khendkar",
-              fontSize: "clamp(1.875rem, 5vw, 3rem)",
-              offsetX: "50px",
-              offsetY: "-10px",
-            },
-            "Problem Solver.",
-            "Crazy Engineer",
-            {
-              content: "I am,Pranay Khendkar",
-              fontSize: "clamp(1.875rem, 5vw, 3rem)",
-              offsetX: "50px",
-              offsetY: "-9px",
-            },
-            {
-              content: "Code that solves problems",
-              fontSize: "clamp(1.85rem, 5vw, 2.9rem)",
-              offsetX: "58px",
-              offsetY: "-9px",
-            },
-          ]}
-          interval={3000}
-          fontSize="clamp(1.875rem, 5vw, 3rem)"
-          fontFamily="inherit"
-          className="!items-start mb-6"
-          textClassName="!text-left about-accent-text font-bold leading-tight font-hero"
-        />
-
-        {/* Description — typing (letter-by-letter reveal) effect */}
-        <TypingText
-          as="p"
-          className="text-base md:text-lg leading-relaxed text-fg-muted mb-8 max-w-xl font-bold"
-          fontSize=""
-          fontWeight=""
-          color=""
-          letterSpacing=""
-          align="left"
-          duration={5}
-          delay={0.2}
-          loop
-          pauseBeforeRepeat={1.5}
+        <motion.p
+          {...rise(2)}
+          className="mt-6 max-w-xl text-center md:text-left text-base md:text-lg leading-relaxed text-fg-muted font-cond"
         >
-          I'm a passionate Full-Stack Developer, aspiring Data Scientist, and
-          natural problem solver who enjoys turning ideas into impactful digital
-          experiences. I thrive on learning new technologies, leading collaborative
-          projects, and building clean, scalable, and user-focused applications
-          that create real-world value.
-        </TypingText>
+          I'm Pranay, a full-stack developer and aspiring data scientist from
+          India. I turn ideas into clean, scalable products — from role-based
+          dashboards to AI-powered platforms.
+        </motion.p>
 
-        {/* Meta info row */}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 text-sm about-meta-text font-cond">
-          <div className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            <span>20 Years Old</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>India</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 6-10 7L2 6" />
-            </svg>
-            <span>khendkarpranay@gmail.com</span>
-          </div>
+        {/* stats */}
+        <motion.div
+          {...rise(3)}
+          className="mt-10 flex justify-center md:justify-start divide-x divide-theme-border border-t border-theme-border pt-6"
+        >
+          {[
+            { value: "4+", label: "public repos on GitHub" },
+            { value: "7+", label: "GitHub followers" },
+            { value: "2+", label: "products shipped live" },
+          ].map((s) => (
+            <div key={s.label} className="px-5 first:pl-0 md:px-8">
+              <div className="font-suisse-mono text-3xl md:text-4xl font-extrabold tracking-tight text-fg">
+                {s.value}
+              </div>
+              <div className="mt-1 flex items-center gap-1.5 font-cond text-[11px] text-fg-subtle">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* bento grid */}
+        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-12">
+          {/* photo */}
+          <motion.div {...rise(4)} className="md:col-span-5 md:row-span-2">
+            <Card className="overflow-hidden h-full">
+              <div className="relative h-full min-h-[380px]">
+                <img
+                  src="/Avater.png"
+                  alt="Portrait of Pranay Khendkar"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-top grayscale transition duration-700 hover:grayscale-0"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-3 py-1 font-cond text-[11px] text-white backdrop-blur">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                    Open to work
+                  </div>
+                  <h3 className="font-hero text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+                    Pranay Khendkar
+                  </h3>
+                  <p className="mt-1 font-cond text-white/70">Crazy Engineer</p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* problem solver */}
+          <motion.div {...rise(5)} className="md:col-span-7">
+            <Card className="p-7 md:p-9">
+            <SplitText
+              as="h3"
+              className="font-hero text-xl md:text-2xl font-bold text-fg"
+            >
+              Problem solver first, coder second.
+            </SplitText>
+              <p className="mt-4 max-w-xl leading-relaxed text-fg-muted font-cond">
+                I enjoy turning ideas into impactful digital experiences. I
+                learn new technologies fast, lead collaborative projects, and
+                build clean, scalable, user-focused applications that create
+                real-world value.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2 font-cond text-xs">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-theme-border px-3 py-1 text-fg-muted">
+                  <MapPin size={12} /> India
+                </span>
+                {["20 years old", "Full-stack", "Data science"].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-theme-border px-3 py-1 text-fg-muted"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* currently focused on */}
+          <motion.div {...rise(6)} className="md:col-span-4">
+            <Card className="p-7 h-full">
+              <div className="font-cond text-[11px] uppercase tracking-wide text-fg-subtle">
+                Currently focused on
+              </div>
+              <ul className="mt-4 space-y-3 text-sm font-cond text-fg">
+                {[
+                  "Role-based full-stack apps",
+                  "Realtime features with WebSockets",
+                  "Data science and Gen-AI",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </motion.div>
+
+          {/* latest ship */}
+          <motion.div {...rise(7)} className="md:col-span-3">
+            <a
+              href="https://sept-ai.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open SEPT AI live"
+              className="group block h-full"
+            >
+              <Card className="relative block overflow-hidden h-full min-h-[190px]">
+                <img
+                  src="/project-septai.png"
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105 group-hover:opacity-70"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black to-black/30"
+                  aria-hidden="true"
+                />
+                <div className="relative flex h-full min-h-[190px] flex-col justify-end p-6">
+                  <div className="font-cond text-[11px] text-accent">
+                    Latest ship
+                  </div>
+                  <div className="mt-1 flex items-center justify-between text-xl font-bold text-white">
+                    SEPT AI
+                    <ArrowUpRight className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                </div>
+              </Card>
+            </a>
+          </motion.div>
         </div>
 
-        {/* CTA button */}
-        <a
-          href="https://wa.me/919359260318"
+        <motion.a
+          {...rise(8)}
+          href="https://github.com/Pranaykhendkar45"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-accent about-connect-btn font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
+          className="mt-6 inline-flex items-center gap-2 font-cond text-sm text-fg-muted transition hover:text-fg"
         >
-          Let's Connect
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="7" y1="17" x2="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-          </svg>
-        </a>
+          <FaGithub /> See everything I'm building on GitHub
+        </motion.a>
       </div>
-      </CursorImageTrail>
     </section>
   );
 };
