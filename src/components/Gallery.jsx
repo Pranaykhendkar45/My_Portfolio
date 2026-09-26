@@ -120,7 +120,7 @@ const Gallery = () => {
         as="h2"
         className="text-center font-display font-medium capitalize text-[2rem] sm:text-[2.2rem] md:text-[3.5rem] leading-[1.25] md:leading-[1.2] w-[90%] lg:w-[70%] mt-5 mb-8 md:mb-14"
       >
-        Moments, memories and milestones.
+        Moments,memories & milestones.
       </SplitText>
 
       <div className="w-full px-4 md:px-6 lg:px-20 max-w-[1600px]">
