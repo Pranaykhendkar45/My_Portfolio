@@ -19,13 +19,13 @@ The portfolio represents my development journey, technical skills, projects, hac
 ## 📸 Portfolio Preview
 
 
-![Portfolio Hero]("./public/readme img/hero.png")
+![Portfolio Hero](./public/readme%20img/hero.png)
 "
-![About Section]("./public/readme img/about.png")
+![About Section](./public/readme%20img/about.png)
 
-![Tech Stack]("./public/readme img/tech.png")
+![Tech Stack](./public/readme%20img/tech.png)
 
-![Contact Section]("./public/readme img/contact.png")
+![Contact Section](./public/readme%20img/contact.png)
 
 ---
 
