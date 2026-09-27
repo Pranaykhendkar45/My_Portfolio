@@ -89,7 +89,7 @@ function Navbar() {
             className="tracking-wider font-semibold text-2xl cursor-pointer text-fg"
             style={{ letterSpacing: "-0.03em" }}
           >
-            ELFEKKY
+            PRANAY
           </a>
           <div className="flex items-center gap-2">
             <MusicButton />
