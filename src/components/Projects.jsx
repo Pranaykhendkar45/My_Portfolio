@@ -64,8 +64,8 @@ const ProjectCard = ({ p, i }) => {
   const accent = p.tone === "accent";
   return (
     <article
-      style={{ "--stick": `${100 + i * 24}px` }}
-      className={`relative w-[92%] md:w-[90%] mx-auto mb-8 lg:mb-10 lg:sticky lg:top-[var(--stick)] rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:px-12 lg:py-14 ${
+      style={{ "--stick-m": `${12 + i * 14}px`, "--stick-d": `${100 + i * 24}px` }}
+      className={`relative w-[92%] md:w-[90%] mx-auto mb-8 lg:mb-10 sticky top-[var(--stick-m)] lg:top-[var(--stick-d)] rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:px-12 lg:py-14 ${
         accent ? "bg-accent text-white" : "bg-bg-alt text-fg border border-theme-border"
       }`}
     >

@@ -5,6 +5,7 @@ import { Trail } from "./TrailText";
 
 import LetsTalk from "./LetsTalk";
 import MenuButton from "./MenuButton";
+import MusicPlayer from "./MusicPlayer";
 
 import MusicButton from "./MusicButton"; // naam MusicButton hai, par ye actually Dark/Light theme switch hai
 
@@ -92,6 +93,7 @@ function Navbar() {
             PRANAY
           </a>
           <div className="flex items-center gap-2">
+            <MusicPlayer />
             <MusicButton />
             <button
               type="button"
@@ -181,6 +183,7 @@ function Navbar() {
         <div className="items-start justify-between hidden lg:flex pt-14 pb-10">
           <div className="tracking-wider font-AeonikMedium text-4xl">
             <a href="#" aria-label="Home"></a>
+            <MusicPlayer />
           </div>
           <div className="hidden lg:flex items-center justify-around font-AeonikMedium">
             <Trail open={open} className="flex">

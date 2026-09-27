@@ -46,12 +46,21 @@ export const SplitText = ({
   return (
     <Component ref={ref} className={className} style={style} {...rest}>
       {String(children)
-        .split("")
-        .map((char, i) => (
-          <span key={i} className="split-char inline-block">
-            {char === " " ? "\u00A0" : char}
+        .split(" ")
+        .map((word, wi) => (
+          <span key={wi} className="inline-block whitespace-nowrap">
+            {word.split("").map((char, ci) => (
+              <span key={ci} className="split-char inline-block">
+                {char}
+              </span>
+            ))}
           </span>
-        ))}
+        ))
+        .reduce((acc, wordEl, idx) => {
+          if (idx > 0) acc.push(" ");
+          acc.push(wordEl);
+          return acc;
+        }, [])}
     </Component>
   );
 };
