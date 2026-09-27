@@ -8,6 +8,7 @@ import {
   SiJavascript,
   SiPython,
   SiTailwindcss,
+  SiReact,
 } from "react-icons/si";
 import { TbLetterC } from "react-icons/tb";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,7 @@ const DefaultIcons = {
   javascript: <SiJavascript className="w-5 h-5" color="#F7DF1E" />,
   python: <SiPython className="w-5 h-5" color="#3776AB" />,
   tailwind: <SiTailwindcss className="w-5 h-5" color="#38BDF8" />,
+  react: <SiReact className="w-5 h-5" color="#61DAFB" />,
 };
 
 /**
@@ -55,6 +57,7 @@ const DEFAULT_ORBITS = [
     items: [
       { id: "javascript", label: "JavaScript", color: "#F7DF1E", svg: DefaultIcons.javascript },
       { id: "html", label: "HTML", color: "#E34F26", svg: DefaultIcons.html },
+      { id: "react", label: "React", color: "#61DAFB", svg: DefaultIcons.react },
     ],
   },
   {

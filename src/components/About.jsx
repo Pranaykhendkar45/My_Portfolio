@@ -37,7 +37,7 @@ const About = () => {
             <SplitText as="span" className="inline">
               I build web apps that solve{" "}
             </SplitText>
-            <SplitText as="span" className="inline text-accent">
+            <SplitText as="span" className="inline about-real-problems">
               real problems
             </SplitText>
           </h2>

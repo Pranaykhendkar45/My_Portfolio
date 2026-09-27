@@ -413,16 +413,18 @@ body {
     transparent 70%
   );
 }
+.about-real-problems {
+  color: #f66b15 !important;
+}
 .ct-shipit {
   box-shadow: 0 0 30px color-mix(in srgb, var(--tok-accent) 45%, transparent);
+  border-color: #f66b15 !important;
+  color: #f66b15 !important;
 }
 .ct-btn-primary {
-  background-color: var(--tok-accent);
-  color: #fff;
-  border: 2px solid var(--tok-accent);
-}
-[data-theme="light"] .ct-btn-primary {
-  color: var(--tok-bg);
+  background-color: #f66b15 !important;
+  border-color: #f66b15 !important;
+  color: #fff !important;
 }
 .ct-btn-primary:hover {
   filter: brightness(1.08);
