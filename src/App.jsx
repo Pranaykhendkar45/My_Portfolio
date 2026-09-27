@@ -10,6 +10,7 @@ import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Gallery />
       <Contact />
       <Footer />
+      <Analytics />
     </SmoothScroll>
   );
 }
