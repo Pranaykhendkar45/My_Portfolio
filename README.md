@@ -1,125 +1,314 @@
 # Pranay Khendkar — Portfolio
 
-Personal portfolio website of **Pranay Khendkar**, a full-stack developer and
-aspiring data scientist. Built as a single-page React app with a heavy focus
-on motion — scroll-driven reveals, a 3D tech-stack orbit, sticky stacking
-project cards, and a smooth-scroll feel throughout.
+> **Full Stack Developer • CSE Student • Aspiring Data Scientist**
 
-**Live site:** _add your deployed link here_
+Personal portfolio website of **Pranay Khendkar**, built as a modern single-page React application with a strong focus on **motion, interactive UI, smooth scrolling, 3D elements, and project showcasing**.
+
+The portfolio represents my development journey, technical skills, projects, hackathon work, and interest in Data Science and AI.
+
+## 🌐 Live Site
+
+**Portfolio:** https://pranay-portfolio-4646.vercel.app/
+
+**GitHub:** https://github.com/Pranaykhendkar45
+
+**LinkedIn:** https://www.linkedin.com/in/pranay-khendkar-304527385/
+
+---
+
+## 📸 Portfolio Preview
+
+![Portfolio Hero](<img width="1881" height="982" alt="image" src="https://github.com/user-attachments/assets/bf72d708-9101-4e19-af5e-a4ecdad10f44" />
+)
+
+![About Section](<img width="1876" height="1342" alt="image" src="https://github.com/user-attachments/assets/cf9c001f-affb-4875-82fe-7f5cbe33a34f" />
+)
+
+![Tech Stack](<img width="1780" height="956" alt="image" src="https://github.com/user-attachments/assets/1acc04b3-9679-4df3-9830-87dc1189bed9" />
+)
+
+![Contact Section](<img width="1870" height="1012" alt="image" src="https://github.com/user-attachments/assets/11fab51c-9118-4a75-bdc9-e672e3d9d9b5" />
+)
 
 ---
 
 ## ✨ Features
 
-- **Animated hero** — parallax hero section with smooth scroll (Lenis) and a
-  custom cursor trail.
-- **About** — bento-style intro card with a GitHub stats strip and a "latest
-  ship" preview card.
-- **3D Tech Orbit** — an interactive `three.js` solar-system of the tech
-  stack (React Three Fiber + Drei).
-- **Projects** — sticky, stacking project cards with live links, tech tags
-  and stats.
-- **Testimonials** — auto-scrolling marquee of community reviews.
-- **Gallery** — a filterable photo/video gallery of hackathons and events.
-- **Contact** — a bordered call-to-action box with a scroll-triggered,
-  character-split headline animation, direct email + WhatsApp links.
-- **Dark / light theme** — toggleable, persisted to `localStorage`, no
-  flash-of-wrong-theme on reload.
-- **Background music player** — an on/off toggle in the navbar that loops
-  through a playlist.
-- **Fully responsive** — from small phones up to large desktop screens.
+* **Animated Hero** — interactive landing section with smooth animations.
+* **About Me** — bento-style introduction with profile and development focus.
+* **3D Tech Orbit** — interactive technology showcase using Three.js.
+* **Projects** — project cards with descriptions, technologies and links.
+* **Testimonials** — animated scrolling developer/community reviews.
+* **Gallery** — visual showcase of hackathons, events and experiences.
+* **Contact** — direct email and WhatsApp contact options.
+* **Dark / Light Theme** — theme switching with `localStorage` persistence.
+* **Background Music** — optional music player with playlist support.
+* **Smooth Scrolling** — Lenis-powered smooth scrolling.
+* **Animations** — GSAP, Framer Motion and React Spring interactions.
+* **Custom Cursor** — interactive cursor effects.
+* **Fully Responsive** — designed for desktop, tablet and mobile.
+
+---
+
+## 👨‍💻 About Me
+
+I'm **Pranay Khendkar**, a BTech Computer Science Engineering student and developer from India.
+
+I enjoy building real-world projects, exploring new technologies and turning ideas into practical digital experiences.
+
+### Currently Interested In
+
+* Full Stack Development
+* Frontend & Backend Development
+* JavaScript & React
+* Python
+* Data Science
+* AI / Gen-AI
+* Hackathons
+
+> **I don't just want to learn technologies — I want to build with them.**
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer         | Tools                                                                                              |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Framework     | [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)                                        |
-| Styling       | [Tailwind CSS 4](https://tailwindcss.com/)                                                          |
-| Animation     | [GSAP](https://gsap.com/) (ScrollTrigger), [Framer Motion](https://www.framer.com/motion/), [@react-spring/web](https://www.react-spring.dev/) |
-| 3D            | [three.js](https://threejs.org/) via `@react-three/fiber` + `@react-three/drei`                     |
-| Smooth scroll | [Lenis](https://lenis.darkroom.engineering/)                                                        |
-| Icons         | [lucide-react](https://lucide.dev/), [react-icons](https://react-icons.github.io/react-icons/)      |
-| Linting       | [oxlint](https://oxc.rs/docs/guide/usage/linter.html)                                               |
+| Category          | Technologies                        |
+| ----------------- | ----------------------------------- |
+| **Framework**     | React 19 + Vite                     |
+| **Styling**       | Tailwind CSS                        |
+| **Languages**     | JavaScript • Python • C             |
+| **Animation**     | GSAP • Framer Motion • React Spring |
+| **3D**            | Three.js • React Three Fiber • Drei |
+| **Smooth Scroll** | Lenis                               |
+| **Icons**         | Lucide React • React Icons          |
+| **Tools**         | Git • GitHub • VS Code • Vercel     |
+
+---
+
+## 🚀 Featured Projects
+
+### CampusConnect
+
+A placement-management platform designed to connect students, placement officers and companies.
+
+**Tech:** HTML • CSS • JavaScript
+
+---
+
+### SEPT AI
+
+An AI-powered education and classroom management platform designed to help teachers manage students and track academic progress.
+
+**Tech:** React • JavaScript • Tailwind CSS • AI/Gen-AI
+
+---
+
+### Modern Landing Page
+
+A modern animated landing page focused on UI, animations and visual effects.
+
+**Tech:** HTML • CSS • JavaScript • GSAP • Shery.js
+
+---
+
+### Smart Craft Trainer
+
+A traditional-art learning prototype that compares a learner's drawing movement with a saved master drawing.
+
+**Tech:** JavaScript • HSV • DTW • ESP32 • MPU6050 • LocalStorage
+
+---
+
+## 🎯 Currently Learning
+
+```text
+Full Stack Development
+        ↓
+React + Backend Development(Learning)
+        ↓
+Data analytics(Learning)
+```
+
+I continuously improve my problem-solving skills by building projects and experimenting with new technologies.
+
+---
+
+## 🏆 Hackathons & Activities
+
+I participate in hackathons and collaborative projects to gain practical experience in:
+
+* Problem solving
+* Team collaboration
+* Rapid prototyping
+* UI/UX development
+* Hardware + software integration
+* Presenting technical solutions
+
+---
+
+## 📱 Responsive Design
+
+The portfolio is designed to work across:
+
+* 💻 Desktop
+* 💻 Laptop
+* 📱 Mobile
+* 📲 Tablet
+
+Special attention is given to navigation, typography, animations and interactive elements across different screen sizes.
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 src/
 ├── components/
-│   ├── About.jsx            # About Me bento section
-│   ├── TechOrbit.jsx        # 3D tech-stack orbit
-│   ├── Projects.jsx         # Sticky-stacking project cards
-│   ├── Testimonials.jsx     # Community reviews marquee
-│   ├── Gallery.jsx          # Photo/video gallery
-│   ├── Contact/             # "Have an idea?" CTA section
-│   ├── Footer/               # Site footer
-│   ├── Navbar/               # Navbar, mobile menu, theme + music toggle
-│   ├── HeroSection/           # Landing hero
-│   ├── SmoothScroll.jsx       # Lenis smooth-scroll wrapper
-│   └── ui/                    # Shared UI primitives (SectionBadge, SplitText, etc.)
+│   ├── About/
+│   ├── TechOrbit/
+│   ├── Projects/
+│   ├── Testimonials/
+│   ├── Gallery/
+│   ├── Contact/
+│   ├── Footer/
+│   ├── Navbar/
+│   ├── HeroSection/
+│   ├── SmoothScroll/
+│   └── ui/
+│
 ├── App.jsx
-└── index.css                  # Theme tokens (light/dark) + global styles
+└── index.css
+
 public/
-├── music/                     # Background music playlist
-└── *.png                      # Project screenshots, avatar, etc.
+├── music/
+├── project-assets/
+└── readme/
+    ├── hero.png
+    ├── about.png
+    ├── tech-stack.png
+    └── contact.png
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-**Prerequisites:** Node.js 18+ and npm.
+### Prerequisites
+
+* Node.js 18+
+* npm
+
+### Installation
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-
-# 2. Install dependencies
+git clone https://github.com/Pranaykhendkar45/<your-repository>.git
+cd portfolio
 npm install
-
-# 3. Start the dev server
 npm run dev
 ```
 
-The app runs at `http://localhost:5173` by default.
+The development server runs at:
 
-### Other scripts
+```text
+http://localhost:5173
+```
+
+### Other Scripts
 
 ```bash
-npm run build     # production build → dist/
-npm run preview   # preview the production build locally
-npm run lint      # run oxlint
+npm run build     # Production build
+npm run preview   # Preview production build
+npm run lint      # Run linter
 ```
 
 ---
 
 ## 🎨 Customizing
 
-- **Projects** — edit the `projects` array at the top of
-  `src/components/Projects.jsx` (title, description, image, live URL, stats,
-  stack, tone).
-- **Theme colors** — edit the CSS custom properties under
-  `[data-theme="light"]` / `[data-theme="dark"]` in `src/index.css`.
-- **Music playlist** — drop audio files in `public/music/` and list them in
-  `PLAYLIST` inside `src/components/Navbar/MusicPlayer.jsx`.
-- **Contact links** — update the `EMAIL` and `WHATSAPP_URL` constants
-  (present in `Contact.jsx`, `Navbar.jsx`, and the footer).
+### Projects
+
+Update project information inside:
+
+```text
+src/components/Projects.jsx
+```
+
+You can modify:
+
+* Project title
+* Description
+* Image
+* Live URL
+* GitHub URL
+* Technology stack
+
+### Theme
+
+Customize light and dark theme variables inside:
+
+```text
+src/index.css
+```
+
+### Music
+
+Add audio files inside:
+
+```text
+public/music/
+```
+
+and update the playlist inside the music-player component.
+
+### Contact
+
+Update the email and WhatsApp links inside the Contact, Navbar and Footer components.
+
+---
+
+## 🔮 Future Improvements
+
+* More advanced 3D interactions
+* Better project case studies
+* More real-world projects
+* AI-powered portfolio features
+* Performance improvements
+* Better accessibility
+* More interactive developer experiments
 
 ---
 
 ## 📬 Contact
 
-- **Email:** khendkarpranay@gmail.com
-- **WhatsApp:** [Chat here](https://wa.me/+919359260318)
+I'm open to:
+
+* 💼 Internships
+* 🚀 Hackathons
+* 🤝 Team projects
+* 💻 Freelance opportunities
+* 🧠 Technical collaborations
+* 🌱 Learning opportunities
+
+**Email:** [khendkarpranay@gmail.com](mailto:khendkarpranay@gmail.com)
+
+**Portfolio:** https://pranay-portfolio-4646.vercel.app/
+
+**GitHub:** https://github.com/Pranaykhendkar45
+
+**LinkedIn:** https://www.linkedin.com/in/pranay-khendkar-304527385/
 
 ---
 
 ## 📄 License
 
-This project is personal portfolio source code. Feel free to use it as
-inspiration, but please don't republish it as your own portfolio as-is.
+This project is a personal portfolio source code.
+
+Feel free to use it as **inspiration**, but please don't republish it as your own portfolio as-is.IF YOU USE ACTION WLL BE TAKEN.
+
+---
+
+## 👋 Thanks for Visiting
+
+If you like the portfolio or find any project interesting, feel free to explore the source code and connect with me.
+
+> **Keep building. Keep learning. Keep shipping. 🚀**
