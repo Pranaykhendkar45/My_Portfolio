@@ -1,11 +1,31 @@
 # Pranay Khendkar — Portfolio
 
-Personal portfolio website of **Pranay Khendkar**, a full-stack developer and
-aspiring data scientist. Built as a single-page React app with a heavy focus
-on motion — scroll-driven reveals, a 3D tech-stack orbit, sticky stacking
-project cards, and a smooth-scroll feel throughout.
+> **Full Stack Developer • CSE Student • Aspiring Data Scientist**
 
-**Live site:** _add your deployed link here_
+Personal portfolio website of **Pranay Khendkar**, built as a modern single-page React application with a strong focus on **motion, interactive UI, smooth scrolling, 3D elements, and project showcasing**.
+
+The portfolio represents my development journey, technical skills, projects, hackathon work, and interest in Data Science and AI.
+
+## 🌐 Live Site
+
+**Portfolio:** https://pranay-portfolio-4646.vercel.app/
+
+**GitHub:** https://github.com/Pranaykhendkar45
+
+**LinkedIn:** https://www.linkedin.com/in/pranay-khendkar-304527385/
+
+---
+
+## 📸 Portfolio Preview
+
+
+![Portfolio Hero]("./public/readme img/hero.png")
+"
+![About Section]("./public/readme img/about.png")
+
+![Tech Stack]("./public/readme img/tech.png")
+
+![Contact Section]("./public/readme img/contact.png")
 
 ---
 
