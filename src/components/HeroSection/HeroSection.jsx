@@ -44,7 +44,7 @@ const HeroSection = () => {
 
     // Hide hero elements initially
     gsap.set(headingChars, { autoAlpha: 0, y: 100 });
-    gsap.set(imgRef.current, { autoAlpha: 0, y: "50%", scale: 0.8 });
+    gsap.set(imgRef.current, { autoAlpha: 0, yPercent: 30, scale: 0.9 });
     gsap.set([stroke1Ref.current, stroke2Ref.current], { autoAlpha: 0, width: "0%" });
     gsap.set(endLineRef.current, { autoAlpha: 0 });
 
@@ -94,8 +94,8 @@ const HeroSection = () => {
           relativeInput: true,
           hoverOnly: !isTouch,
           selector: ".hero-layer",
-          scalarX: isTouch ? 4 : 2,
-          scalarY: isTouch ? 4 : 2,
+          scalarX: isTouch ? 2 : 2,
+          scalarY: isTouch ? 0 : 2,
           frictionX: isTouch ? 0.18 : 0.1,
           frictionY: isTouch ? 0.18 : 0.1,
         });
@@ -161,7 +161,7 @@ const HeroSection = () => {
     // Image animation
     tl.to(imgRef.current, {
       autoAlpha: 1,
-      y: 0,
+      yPercent: 0,
       scale: 1,
       duration: 1,
       ease: "sine.out",
