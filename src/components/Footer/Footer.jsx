@@ -73,8 +73,8 @@ const Footer = () => {
         </div>
 
         {/* Explore + Contact links */}
-        <div className="grid grid-cols-2 gap-8">
-          <div className="flex flex-col gap-3">
+        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-6 md:gap-8">
+          <div className="flex min-w-0 flex-col gap-3">
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-fg-subtle mb-1">
               Explore
             </h3>
@@ -116,7 +116,7 @@ const Footer = () => {
             </LineHoverLink>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex min-w-0 flex-col gap-3">
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-fg-subtle mb-1">
               Contact
             </h3>
@@ -124,7 +124,7 @@ const Footer = () => {
               variant="slide"
               injectStyle={false}
               href={`mailto:${EMAIL}`}
-              className="text-fg-muted hover:text-fg transition-colors break-all"
+              className="text-fg-muted hover:text-fg transition-colors break-all [overflow-wrap:anywhere] whitespace-normal"
             >
               {EMAIL}
             </LineHoverLink>

@@ -281,17 +281,18 @@ body {
 }
 
 #hero-img {
-  /* Image hamesha hero ke bottom se start hoke upar tak jaati hai.
-     Centering margin:auto se hoti hai (transform se nahi) — kyunki GSAP
-     transform ko overwrite kar deta tha aur image bich me atak jaati thi. */
-  --hero-img-h: min(100svh, 150vw);
+  /* Image hero ke bottom se start hoke upar tak jaati hai.
+     Centering: left = 50% - width/2 (margin:auto nahi) — mobile pe image
+     viewport se badi hoti hai aur margin:auto tab left-align ho jaata tha,
+     isliye image right side me dikhti thi. GSAP transform use karta hai,
+     isliye yaha transform nahi lagaya. */
+  --hero-img-h: min(100svh, 158vw);
+  --hero-img-w: calc(var(--hero-img-h) * 0.914); /* 1199 / 1312 */
   position: absolute;
   bottom: -1px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  left: calc(50% - var(--hero-img-w) / 2);
   height: var(--hero-img-h);
-  width: calc(var(--hero-img-h) * 0.914); /* 1199 / 1312 */
+  width: var(--hero-img-w);
   max-width: none;
   transform-origin: 50% 100%;
   z-index: 10;
@@ -303,6 +304,9 @@ body {
   object-fit: contain;
   object-position: bottom center;
   display: block;
+  /* PNG me person image ke center se ~6% right me hai (left me transparent
+     jagah zyada) — isliye thoda left shift karke person ko visually center kiya. */
+  transform: translateX(-6%);
 }
 
 #hero-stroke-1 {
