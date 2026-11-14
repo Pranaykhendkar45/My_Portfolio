@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import SectionBadge from "./ui/section-badge";
@@ -51,6 +51,21 @@ const About = () => {
           India. I turn ideas into clean, scalable products — from role-based
           dashboards to AI-powered platforms.
         </motion.p>
+
+        {/* resume download */}
+        <motion.div
+          {...rise(2.5)}
+          className="mt-8 flex justify-center md:justify-start"
+        >
+          <a
+            href="/Pranay_Khendkar_Resume.pdf"
+            download="Pranay_Khendkar_Resume.pdf"
+            className="group inline-flex items-center gap-3 rounded-2xl bg-accent px-7 py-3 font-cond text-base font-medium text-white transition-shadow duration-300 hover:shadow-[0_0_30px_4px_rgba(246,107,21,0.45)]"
+          >
+            <Download size={18} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+            Download Resume
+          </a>
+        </motion.div>
 
         {/* stats */}
         <motion.div
