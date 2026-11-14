@@ -24,6 +24,34 @@ const SplitChars = ({ text, className, id }) => {
   );
 };
 
+const ROLES = ["Python Developer", "Web Builder", "AI Explorer", "Team Leader"];
+
+const TypingRole = () => {
+  const [text, setText] = useState("");
+  useEffect(() => {
+    let r = 0, c = 0, del = false, t;
+    const tick = () => {
+      const word = ROLES[r];
+      c += del ? -1 : 1;
+      setText(word.slice(0, c));
+      let wait = del ? 45 : 90;
+      if (!del && c === word.length) { del = true; wait = 1400; }
+      else if (del && c === 0) { del = false; r = (r + 1) % ROLES.length; wait = 350; }
+      t = setTimeout(tick, wait);
+    };
+    t = setTimeout(tick, 2500); // loader khatam hone ke baad shuru
+    return () => clearTimeout(t);
+  }, []);
+  return (
+    <div
+      className="pointer-events-none absolute bottom-[9%] left-1/2 z-[12] -translate-x-1/2 whitespace-nowrap rounded-full border border-theme-border bg-bg/70 px-5 py-2 backdrop-blur-md font-label text-xs md:text-sm tracking-widest text-fg"
+    >
+      <span className="text-accent">&gt;</span> {text}
+      <span className="ml-0.5 inline-block w-[2px] h-[1em] translate-y-[2px] animate-pulse bg-accent" />
+    </div>
+  );
+};
+
 const HeroSection = () => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
@@ -256,6 +284,9 @@ const HeroSection = () => {
             <img src="/Svg_Stroke.png" alt="" draggable="false" />
           </div>
         </div>
+
+        {/* Typing role line (not a .hero-layer, so parallax ignores it) */}
+        <TypingRole />
 
         {/* End-of-hero indicator line */}
         <div className="hero-end-line" ref={endLineRef}></div>

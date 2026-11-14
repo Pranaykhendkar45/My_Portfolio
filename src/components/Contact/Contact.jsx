@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaWhatsapp } from "react-icons/fa";
@@ -13,6 +13,61 @@ const WHATSAPP_URL = "https://wa.me/+919359260318";
 const CornerDot = ({ className }) => (
   <span className={`absolute w-[6px] h-[6px] rounded-full bg-accent ${className}`} />
 );
+
+// Web3Forms (free): https://web3forms.com -> email daal ke Access Key lo,
+// phir .env me VITE_WEB3FORMS_KEY=xxxx daalo (aur Vercel env me bhi).
+const W3F_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
+const ContactForm = () => {
+  const [status, setStatus] = useState("idle"); // idle | sending | ok | error
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    if (f.get("botcheck")) return; // honeypot: bots fill this
+    const name = f.get("name"), email = f.get("email"), message = f.get("message");
+    if (!W3F_KEY) {
+      // key nahi hai to mail app khol do
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("Portfolio message from " + name)}&body=${encodeURIComponent(message + "\n\n" + name + " (" + email + ")")}`;
+      return;
+    }
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: W3F_KEY,
+          subject: `Portfolio message from ${name}`,
+          from_name: "Portfolio Contact Form",
+          name, email, message,
+          replyto: email,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) { setStatus("ok"); e.target.reset(); } else setStatus("error");
+    } catch { setStatus("error"); }
+  };
+  const field = "w-full rounded-xl border border-theme-border bg-bg px-4 py-3 font-cond text-base text-fg outline-none transition-colors placeholder:text-fg-subtle focus:border-accent";
+  return (
+    <form onSubmit={onSubmit} className="relative mt-12 w-full max-w-xl space-y-3 text-left">
+      <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" />
+      <div className="grid gap-3 md:grid-cols-2">
+        <input name="name" required placeholder="Your name" className={field} />
+        <input name="email" type="email" required placeholder="Your email" className={field} />
+      </div>
+      <textarea name="message" required rows={4} placeholder="Tell me about your idea..." className={field} />
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="ct-btn-primary inline-flex h-12 w-full items-center justify-center rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-60"
+      >
+        {status === "sending" ? "Sending..." : "Send Message"}
+      </button>
+      {status === "ok" && <p className="text-center font-cond text-sm text-accent">Thanks! Your message is sent, I'll reply soon.</p>}
+      {status === "error" && <p className="text-center font-cond text-sm text-red-500">Something went wrong. Please email me directly instead.</p>}
+    </form>
+  );
+};
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -126,6 +181,8 @@ const Contact = () => {
             <span>Chat on WhatsApp</span>
           </a>
         </div>
+
+        <ContactForm />
       </div>
     </section>
   );

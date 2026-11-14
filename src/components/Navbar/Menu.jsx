@@ -86,6 +86,7 @@ const Menu = ({ open, onOutsideClick, onClose }) => {
     { label: "HOME", target: "top" },
     { label: "ABOUT", target: "about" },
     { label: "WORK", target: "projects-section" },
+  { label: "CERTIFICATES", target: "certificates" },
     { label: "CONTACT", target: "contact-section" },
   ];
 

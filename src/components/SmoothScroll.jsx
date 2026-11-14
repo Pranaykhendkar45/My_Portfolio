@@ -9,6 +9,9 @@ const SmoothScroll = ({ children }) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Mobile fix: URL bar show/hide fires resize -> triggers get mis-measured.
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const isTouch =
       typeof window !== "undefined" &&
       (window.matchMedia("(hover: none), (pointer: coarse)").matches ||
@@ -17,11 +20,9 @@ const SmoothScroll = ({ children }) => {
     const lenis = new Lenis({
       duration: isTouch ? 1.0 : 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      // On touch devices, native scrolling feels best — disable Lenis touch
-      // smoothing and let the browser handle inertial scrolling natively.
-      smoothTouch: false,
-      touchMultiplier: isTouch ? 1.5 : 0.25,
+      smoothWheel: true,
+      // On touch devices, native scrolling feels best — keep Lenis off for touch.
+      syncTouch: false,
     });
 
     // Expose the active Lenis instance globally so other components (e.g. the
@@ -40,7 +41,26 @@ const SmoothScroll = ({ children }) => {
 
     gsap.ticker.lagSmoothing(0);
 
+    // Re-measure all scroll animations whenever page height changes
+    // (fonts, lazy images, orientation change). Without this, on phones the
+    // trigger positions go stale and animations never start.
+    let timer;
+    const refresh = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => ScrollTrigger.refresh(), 200);
+    };
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(refresh) : null;
+    ro?.observe(document.body);
+    window.addEventListener("load", refresh);
+    window.addEventListener("orientationchange", refresh);
+    document.fonts?.ready.then(refresh);
+    refresh();
+
     return () => {
+      clearTimeout(timer);
+      ro?.disconnect();
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("orientationchange", refresh);
       lenis.destroy();
       if (typeof window !== "undefined" && window.__lenis === lenis) {
         delete window.__lenis;
